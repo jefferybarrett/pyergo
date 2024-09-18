@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pyergo
+Version: 0.1.dev0
+License: Creative Commons Attribution-Noncommercial-Share Alike license
+
+# Introduction
+
+This is a python package that specializes in simulating accumulative damage from cumulative load.
+
+## Cumulative Load is NOT Cumulative Damage
+
+... But the two are related!
+

@@ -1,0 +1,34 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pyergo.DamageModels as dm
+import pyergo.Units as Units
+
+
+if __name__ == "__main__":
+    repetitions = np.arange(100000)
+    myForce = (1*Units.kN) * np.ones_like(repetitions)
+
+    # now let's initialize the model
+    gallagher = dm.LiFFT() # loads with default parameters
+    barrett = dm.BarrettCallaghan(A = gallagher.A, B = gallagher.B*100/gallagher.ultimate_tolerance)
+
+    print(f"Barrett    A = {barrett.A}, B = {barrett.B}")
+    print(f"Gallagher  A = {gallagher.A}, B = {gallagher.B/gallagher.ultimate_tolerance}")
+    print(f"Gallagher approx uct: {np.round(gallagher.estimate_uct()/Units.kN,2)} kN")
+    print(f"Barrett estimate uct = {np.around(barrett.estimate_uct()/Units.kN,2)} kN")
+
+
+    # Simulate using the force
+    gdam = gallagher.simulate(myForce)
+    bdam = barrett.simulate(myForce)
+
+    # plot the result
+    plt.plot(repetitions, gdam, label = "LiFFT")
+    plt.plot(repetitions, bdam, label = "Current Investigation")
+    plt.ylim(0, 1)
+    plt.legend()
+    plt.show()
+
+
+
+

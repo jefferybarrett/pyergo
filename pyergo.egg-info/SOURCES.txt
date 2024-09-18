@@ -1,0 +1,8 @@
+README.md
+setup.py
+pyergo/DamageModels.py
+pyergo/Units.py
+pyergo.egg-info/PKG-INFO
+pyergo.egg-info/SOURCES.txt
+pyergo.egg-info/dependency_links.txt
+pyergo.egg-info/top_level.txt
