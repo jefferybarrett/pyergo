@@ -11,7 +11,7 @@ Implemented models are:
  - LiFFT
 
 
-
+ 
 @author: Jeffery Matthew Barrett
 """
 import numpy as np
@@ -85,7 +85,7 @@ class BarrettCallaghan(DamageModel):
     def simulate(self, forcetimeseries, initstate = 0.0):
         D = super().simulate(forcetimeseries, initstate)
         return np.clip(D, 0.0, 1.0)
-    
+
     def estimate_uct(self):
         """ The ultimate tolerance is the
         load that leads to an estimated time
