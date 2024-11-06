@@ -135,10 +135,10 @@ class LiFFT(DamageModel):
     
     def rate_function(self, state, force):
         D = state
-        return self.A * np.exp(self.B * 100 * force / self.ultimate_tolerance)
+        return self.A * np.exp(self.B * 100.0 * force / self.ultimate_tolerance)
 
     def cycles_to_failure(self, force):
-        return 1/self.rate_function(0.0, force)
+        return 1.0/self.rate_function(0.0, force)
 
     def estimate_uct(self):
         func = lambda f: (self.cycles_to_failure(f) - 1.0)
