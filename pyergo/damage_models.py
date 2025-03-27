@@ -8,20 +8,16 @@ and cumulative damage.
 Implemented models are:
  - MinerPalmgren
  - BarrettCallaghan
- - LiFFT
-
-
- 
-@author: Jeffery Matthew Barrett
+ - LiFFTrepo
 """
 import numpy as np
 from scipy.special import exp1
 from scipy.optimize import newton
-from scipy.integrate import solve_ivp
 import pyergo.Units as Units
-import sys
+from functools import cached_property
+from abc import ABC
 
-class DamageModel(object):
+class DamageModel(ABC):
     """ A DamageModel is a class that houses
     one of the cumulative damage models in
     the literature
@@ -29,8 +25,15 @@ class DamageModel(object):
     def __init__(self):
         pass
 
+    @cached_property
+    def uct(self):
+        return self._estimate_uct()
+
     def rate_function(self, state, force):
         return 0.0
+    
+    def _estimate_uct(self):
+        raise NotImplementedError
 
     def simulate(self, force_timeseries, initstate = 0.0):
         D = [initstate] # the damage that will be accumulated
@@ -47,8 +50,8 @@ class MinerPalmgren(DamageModel):
     def rate_function(self, state, force):
         D = state
         return 1/self.SN_curve(force)
-    
-    def estimate_uct(self):
+
+    def _estimate_uct(self):
         """ Gives an estimate for the UCT
         given the provided SN_curve
         """
@@ -74,7 +77,7 @@ class BarrettCallaghan(DamageModel):
             return self.A * (1 - D) * np.exp(self.B * force / (1 - D))
         else:
             return 0.0
-
+        
     def cycles_to_failure(self, applied_force):
         """ This is the "time" to failure of the damage model
         Noting that we are using 'time' measured in units of
@@ -86,7 +89,7 @@ class BarrettCallaghan(DamageModel):
         D = super().simulate(forcetimeseries, initstate)
         return np.clip(D, 0.0, 1.0)
 
-    def estimate_uct(self):
+    def _estimate_uct(self):
         """ The ultimate tolerance is the
         load that leads to an estimated time
         to failure being less than 1.0
@@ -140,7 +143,7 @@ class LiFFT(DamageModel):
     def cycles_to_failure(self, force):
         return 1.0/self.rate_function(0.0, force)
 
-    def estimate_uct(self):
+    def _estimate_uct(self):
         func = lambda f: (self.cycles_to_failure(f) - 1.0)
         return newton(func, 1.0 * Units.kN)
 
