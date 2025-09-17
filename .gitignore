@@ -1,7 +1,15 @@
-**/__pycache__/
-**/logs
-
+# mac stuff
 .DS_Store
 
+# pre-compiled stuff and logs
+**/__pycache__/
+**/logs
 *.egg-info
 *.pyc
+
+# notejbooks
+*.ipynb
+
+# vscode stuff
+launch.json
+.vscode

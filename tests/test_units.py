@@ -1,4 +1,4 @@
-from pyergo.Units import Units
+from pyergo.Units import *
 
 
 def test_units_1():
