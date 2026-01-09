@@ -10,6 +10,8 @@
 # notejbooks
 *.ipynb
 
+dist
+
 # vscode stuff
 launch.json
 .vscode
