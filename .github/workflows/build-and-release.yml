@@ -26,16 +26,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install uv
 
+      - name: Create venv
+        run: uv venv
+
       - name: Install package + test deps
         run: |
-          # Install your project in the runner's environment
-          uv pip install .
-          # Ensure pytest is available (or rely on your extras)
-          uv pip install pytest
+          uv pip install -e ".[test]"
 
       - name: Run tests
-        run: |
-          uv run pytest -q
+        run: uv run pytest -q
 
   publish:
     name: Build & Publish to PyPI
@@ -54,6 +53,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install uv
+
+      - name: Create venv
+        run: uv venv
 
       - name: Build package
         run: |
