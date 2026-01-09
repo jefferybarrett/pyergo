@@ -27,15 +27,19 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Create venv
+        run: uv venv
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          # If you use a src-layout / package install, this is a common pattern:
-          # - ".[test]" assumes you have an extras_require like test = ["pytest", ...]
-          python -m pip install -e ".[test]"
+          uv pip install --upgrade pip
+          uv pip install -e ".[test]"
 
       - name: Run tests
-        run: |
-          pytest -q
+        run: uv run pytest -q
