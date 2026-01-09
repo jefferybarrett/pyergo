@@ -13,3 +13,5 @@
 # vscode stuff
 launch.json
 .vscode
+
+testing_*
