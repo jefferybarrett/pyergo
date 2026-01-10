@@ -191,6 +191,8 @@ If you use the Barrett–Callaghan damage model or related analyses, please cite
   volume  = {196},
   year    = {2026},
   pages   = {107099},
+  doi     = {10.1016/j.ssci.2025.107099},
+  url     = {https://doi.org/10.1016/j.ssci.2025.107099},
 }
 ```
 
@@ -204,6 +206,8 @@ Similarly, for LiFFT the citation that describes this method is Gallager et al. 
   volume  = {63},
   year    = {2017},
   pages   = {142--150},
+  doi     = {10.1016/j.apergo.2017.04.016},
+  url     = {https://doi.org/10.1016/j.apergo.2017.04.016},
 }
 ```
 
