@@ -51,9 +51,9 @@ $$
 $$
 
 where:
-- \(D \in [0,1]\) is cumulative damage (with \(D=1\) indicating failure),
-- \(F\) is the applied force or load,
-- \(N\) is the number of cycles or repetitions.
+- $D \in [0,1]$ is cumulative damage (with $D=1$ indicating failure),
+- $F$ is the applied force or load,
+- $N$ is the number of cycles or repetitions.
 
 Such models naturally capture:
 - nonlinear load sensitivity,
@@ -74,7 +74,7 @@ from pyergo.damage_models.base import DamageModel
 ### Miner–Palmgren
 
 ```python
-from pyergo.damage_models.miner_palmgren import MinerPalmgren
+from pyergo.damage_models import MinerPalmgren
 ```
 
 A classic linear damage accumulation rule, often written as:
@@ -93,7 +93,7 @@ or load–damage interactions.
 ### Barrett–Callaghan Model
 
 ```python
-from pyergo.damage_models.barrett_callaghan import BarrettCallaghan
+from pyergo.damage_models import BarrettCallaghan
 ```
 
 This model implements a nonlinear cumulative damage law derived from a
@@ -117,7 +117,7 @@ This model is described and analyzed in detail in the associated paper (see belo
 ### LiFFT
 
 ```python
-from pyergo.damage_models.lifft import LiFFT
+from pyergo.damage_models import LiFFT
 ```
 
 An implementation of the LiFFT cumulative damage model originally introduced by
@@ -191,10 +191,25 @@ If you use the Barrett–Callaghan damage model or related analyses, please cite
   volume  = {196},
   year    = {2026},
   pages   = {107099},
+  doi     = {10.1016/j.ssci.2025.107099},
+  url     = {https://doi.org/10.1016/j.ssci.2025.107099},
 }
 ```
 
-A BibTeX entry will be added here in a future release.
+Similarly, for LiFFT the citation that describes this method is Gallager et al. (2017), whose reference is:
+
+```latex
+@article{Gallagher2017LiFFT,
+  author  = {Gallagher, Sean and Sesek, Richard F. and Schall Jr., Michael C. and Huangfu, Rui},
+  title   = {Development and validation of an easy-to-use risk assessment tool for cumulative low back loading: The Lifting Fatigue Failure Tool (LiFFT)},
+  journal = {Applied Ergonomics},
+  volume  = {63},
+  year    = {2017},
+  pages   = {142--150},
+  doi     = {10.1016/j.apergo.2017.04.016},
+  url     = {https://doi.org/10.1016/j.apergo.2017.04.016},
+}
+```
 
 ---
 
