@@ -8,9 +8,7 @@ The package is designed to support:
 - transparent links between analytic theory and numerical simulation,
 - ergonomic and biomechanical research workflows where clarity and extensibility matter.
 
-At present, `pyergo` focuses on cumulative damage models derived from the fatigue and
-mechanobiology literature. The longer-term vision is a broader ecosystem of ergonomics
-and exposure-modelling tools built on the same principles.
+At present, `pyergo` focuses on cumulative damage models derived from the fatigue and mechanobiology literature. The longer-term vision is a broader ecosystem of ergonomics and exposure-modelling tools built on the same principles.
 
 ---
 
@@ -27,7 +25,7 @@ uv venv .venv --python 3.12
 uv add pyergo
 ```
 
-At the moment, installation is source-based:
+Alternatively you can install a version of it in development mode right from source.
 
 ```bash
 git clone https://github.com/jefferybarrett/pyergo.git
