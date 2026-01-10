@@ -51,9 +51,9 @@ $$
 $$
 
 where:
-- \(D \in [0,1]\) is cumulative damage (with \(D=1\) indicating failure),
-- \(F\) is the applied force or load,
-- \(N\) is the number of cycles or repetitions.
+- $D \in [0,1]$ is cumulative damage (with $D=1$ indicating failure),
+- $F$ is the applied force or load,
+- $N$ is the number of cycles or repetitions.
 
 Such models naturally capture:
 - nonlinear load sensitivity,
@@ -194,7 +194,18 @@ If you use the Barrett–Callaghan damage model or related analyses, please cite
 }
 ```
 
-A BibTeX entry will be added here in a future release.
+Similarly, for LiFFT the citation that describes this method is Gallager et al. (2017), whose reference is:
+
+```latex
+@article{Gallagher2017LiFFT,
+  author  = {Gallagher, Sean and Sesek, Richard F. and Schall Jr., Michael C. and Huangfu, Rui},
+  title   = {Development and validation of an easy-to-use risk assessment tool for cumulative low back loading: The Lifting Fatigue Failure Tool (LiFFT)},
+  journal = {Applied Ergonomics},
+  volume  = {63},
+  year    = {2017},
+  pages   = {142--150},
+}
+```
 
 ---
 
