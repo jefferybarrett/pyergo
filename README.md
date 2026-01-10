@@ -16,15 +16,24 @@ and exposure-modelling tools built on the same principles.
 
 ## Installation
 
+You can install from `pip` simply with
+```bash
+pip install pyergo
+```
+(or, equivalently, if you use `uv`):
+
+```bash
+uv venv .venv --python 3.12
+uv add pyergo
+```
+
 At the moment, installation is source-based:
 
 ```bash
-git clone https://github.com/your-org/pyergo.git
+git clone https://github.com/jefferybarrett/pyergo.git
 cd pyergo
 pip install -e .
 ```
-
-A PyPI release may follow once the API stabilizes.
 
 ---
 
@@ -37,9 +46,9 @@ damage.
 Cumulative damage models instead describe how tissue integrity evolves over time as a
 function of applied load, often via a differential equation of the form:
 
-\[
+$$
 \frac{dD}{dN} = f(D, F)
-\]
+$$
 
 where:
 - \(D \in [0,1]\) is cumulative damage (with \(D=1\) indicating failure),
