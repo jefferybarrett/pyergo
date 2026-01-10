@@ -79,11 +79,11 @@ from pyergo.damage_models.miner_palmgren import MinerPalmgren
 
 A classic linear damage accumulation rule, often written as:
 
-\[
+$$
 \frac{dD}{dN} = \frac{1}{N^*(F)}
-\]
+$$
 
-where \(N^*(F)\) is an empirical S–N curve.
+where $N^*(F)$ is an empirical S–N curve.
 
 This model is simple and interpretable, but does not capture nonlinear degradation
 or load–damage interactions.
@@ -99,10 +99,10 @@ from pyergo.damage_models.barrett_callaghan import BarrettCallaghan
 This model implements a nonlinear cumulative damage law derived from a
 Tobolsky–Eyring–type rate process:
 
-\[
+$$
 \frac{dQ}{dN} = -A Q \exp\left(\frac{B F}{Q}\right),
 \quad D = 1 - Q
-\]
+$$
 
 Key features:
 - analytic S–N curve via the exponential integral,
@@ -183,10 +183,16 @@ This approach keeps simulations fast while preserving clarity at model boundarie
 
 If you use the Barrett–Callaghan damage model or related analyses, please cite:
 
-> Barrett, J. M., & Callaghan, J. P.  
-> *A mechanistic model of cumulative damage under repetitive loading*.  
-> Journal of Biomechanics, 2025.  
-> https://www.sciencedirect.com/science/article/pii/S0925753525003248
+```latex
+@article{BarrettCallaghan2026,
+  author  = {Barrett, Jeff M. and Callaghan, Jack P.},
+  title   = {From cumulative exposure to failure: a unifying modelling framework for nonlinear tissue fatigue in ergonomics},
+  journal = {Safety Science},
+  volume  = {196},
+  year    = {2026},
+  pages   = {107099},
+}
+```
 
 A BibTeX entry will be added here in a future release.
 
