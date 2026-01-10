@@ -74,7 +74,7 @@ from pyergo.damage_models.base import DamageModel
 ### Miner–Palmgren
 
 ```python
-from pyergo.damage_models.miner_palmgren import MinerPalmgren
+from pyergo.damage_models import MinerPalmgren
 ```
 
 A classic linear damage accumulation rule, often written as:
@@ -93,7 +93,7 @@ or load–damage interactions.
 ### Barrett–Callaghan Model
 
 ```python
-from pyergo.damage_models.barrett_callaghan import BarrettCallaghan
+from pyergo.damage_models import BarrettCallaghan
 ```
 
 This model implements a nonlinear cumulative damage law derived from a
@@ -117,7 +117,7 @@ This model is described and analyzed in detail in the associated paper (see belo
 ### LiFFT
 
 ```python
-from pyergo.damage_models.lifft import LiFFT
+from pyergo.damage_models import LiFFT
 ```
 
 An implementation of the LiFFT cumulative damage model originally introduced by
